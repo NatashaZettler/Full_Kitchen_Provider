@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:full_kitchen/screens/category_kitchen.dart';
 
 class Kitchen extends StatelessWidget {
   @override
@@ -20,15 +21,27 @@ class Kitchen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text('Bem-vinda(o)', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+                Text(
+                  'Bem-vinda(o)',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.white),
+                ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: ElevatedButton(onPressed: (){}, child: Text('Aproveite')),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CategoryKitchen(),
+                          ));
+                    },
+                    child: Text('Aproveite'),
+                  ),
                 )
               ],
             ),
           ),
-        )
-    );
+        ));
   }
 }
