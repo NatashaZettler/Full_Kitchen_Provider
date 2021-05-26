@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:full_kitchen/models/category.dart';
 import 'package:full_kitchen/models/receipt.dart';
 import 'package:full_kitchen/models/receipts.dart';
+import 'package:full_kitchen/screens/receipts_list.dart';
 
 class CategoryKitchen extends StatelessWidget {
   List<Category> _category = [
@@ -24,7 +25,6 @@ class CategoryKitchen extends StatelessWidget {
             'O pavê, receita brasileira com inspiração francesa, é pra comer com a boca e com os olhos, né? Muito famoso e amado nos lares do Brasil, é uma receita simples e prática, mas muito saborosa.'),
       ),
     ),
-
     Category(
       'Chás',
       'assets/images/tie.jpg',
@@ -62,7 +62,12 @@ class CategoryKitchen extends StatelessWidget {
                   child: Card(
                     child: Image.asset(_category[index].imageCategory),
                   ),
-                  onTap: () {},
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ReceitpsList(),
+                    ),
+                  ),
                 ));
           }),
       floatingActionButton: FloatingActionButton(
