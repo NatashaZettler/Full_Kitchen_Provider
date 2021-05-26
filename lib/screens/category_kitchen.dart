@@ -65,7 +65,7 @@ class CategoryKitchen extends StatelessWidget {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ReceitpsList(),
+                      builder: (context) => ReceiptsList(),
                     ),
                   ),
                 ));

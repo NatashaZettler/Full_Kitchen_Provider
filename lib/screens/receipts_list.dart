@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:full_kitchen/screens/details_receipt.dart';
 
-class ReceitpsList extends StatelessWidget {
+class ReceiptsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,7 +13,13 @@ class ReceitpsList extends StatelessWidget {
           itemBuilder: (context, index) {
             return ListTile(
             title: Text('PAVÊ DE MORANGO',),
-            leading: Image.asset('assets/images/bake.jpg'),);
+            leading: Image.asset('assets/images/bake.jpg'),
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailsReceitpt(),
+              ),
+            ),);
           }),
     );
   }
