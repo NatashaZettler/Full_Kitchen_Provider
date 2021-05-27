@@ -12,10 +12,7 @@ void main() {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => Categories()),
-      ChangeNotifierProvider(
-          create: (context) => Receipts(
-                Receipt('', [], [], ''),
-              )),
+      ChangeNotifierProvider(create: (context) => Receipts()),
     ],
     child: MyKitchen(),
   ));

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:full_kitchen/models/receipts.dart';
+import 'package:full_kitchen/screens/create_receipt.dart';
 import 'package:full_kitchen/screens/details_receipt.dart';
+import 'package:provider/provider.dart';
 
 class ReceiptsList extends StatelessWidget {
   @override
@@ -8,19 +11,33 @@ class ReceiptsList extends StatelessWidget {
       appBar: AppBar(
         title: Text('Receipts'),
       ),
-      body: ListView.builder(
-          itemCount: 2,
-          itemBuilder: (context, index) {
-            return ListTile(
-            title: Text('PAVÊ DE MORANGO',),
-            leading: Image.asset('assets/images/bake.jpg'),
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailsReceitpt(),
-              ),
-            ),);
-          }),
+      body: Consumer<Receipts>(builder: (context, receipts, child) {
+        return ListView.builder(
+            itemCount: receipts.receiptsList.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text(
+                  receipts.receiptsList[index].nameReceipt,
+                ),
+                leading: Image.memory(receipts.receiptsList[index].imageReceipt),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailsReceitpt(),
+                  ),
+                ),
+              );
+            });
+      }),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CreateReceipt(),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -12,7 +12,7 @@ Future<File> showBottomSheetComponent(context) async{
       context: context,
       builder: (BuildContext bc){
         return Container(
-          child: Wrap(children: <Widget>[
+          child: Wrap(children: [
             ListTile(
                 leading: new Icon(Icons.camera_alt),
                 title: new Text('Câmera'),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:full_kitchen/models/categories.dart';
-import 'package:full_kitchen/models/category.dart';
 import 'package:full_kitchen/screens/create_category.dart';
 import 'package:full_kitchen/screens/receipts_list.dart';
 import 'package:provider/provider.dart';

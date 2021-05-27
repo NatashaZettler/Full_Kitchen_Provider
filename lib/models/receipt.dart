@@ -1,15 +1,34 @@
+import 'dart:typed_data';
+
 import 'package:flutter/cupertino.dart';
 
 class Receipt extends ChangeNotifier {
-  final String name;
-  final List<String> ingredients;
-  final List<String> preparationMode;
-  final String moreInformation;
+  String nameReceipt;
+  Uint8List imageReceipt;
+  List<String> ingredients;
+  List<String> preparationMode;
+  String moreInformation;
 
   Receipt(
-    this.name,
+    this.nameReceipt,
+    this.imageReceipt,
     this.ingredients,
     this.preparationMode,
     this.moreInformation,
   );
+
+  void addReceipt(
+    String name,
+    Uint8List image,
+    List<String> ingredients,
+    List<String> preparationMode,
+    String moreInformation,
+  ) {
+    this.nameReceipt = name;
+    this.imageReceipt = image;
+    this.ingredients = ingredients;
+    this.preparationMode = preparationMode;
+    this.moreInformation = moreInformation;
+    notifyListeners();
+  }
 }
