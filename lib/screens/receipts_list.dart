@@ -23,7 +23,7 @@ class ReceiptsList extends StatelessWidget {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => DetailsReceitpt(),
+                    builder: (context) => DetailsReceitpt(receipts.receiptsList[index]),
                   ),
                 ),
               );
