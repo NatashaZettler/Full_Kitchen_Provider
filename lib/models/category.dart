@@ -1,13 +1,19 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
-import 'package:full_kitchen/models/receipts.dart';
 
-class Category{
-  final String nameCategory;
-  final String imageCategory;
-  final Receipts receipts;
+class Category extends ChangeNotifier {
+  String nameCategory;
+  Uint8List imageCategory;
 
-  Category(this.nameCategory, this.imageCategory, this.receipts);
+  Category(
+    this.nameCategory,
+    this.imageCategory,
+  );
+
+  void addCategory(String name, Uint8List image){
+    this.nameCategory = name;
+    this.imageCategory = image;
+    notifyListeners();
+  }
 }
-
-
-
