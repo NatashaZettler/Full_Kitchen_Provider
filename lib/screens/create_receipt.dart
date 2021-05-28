@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:full_kitchen/components/app_bar.dart';
 import 'package:full_kitchen/components/bottom_sheet.dart';
 import 'package:full_kitchen/components/snackbar.dart';
 import 'package:full_kitchen/models/category.dart';
@@ -33,10 +34,7 @@ class _CreateReceiptState extends State<CreateReceipt> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Cadastre uma categoria'),
-        backgroundColor: Color.fromRGBO(243, 2, 10, 1),
-      ),
+      appBar: appBar('Cadastre uma categoria'),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(left:15,right: 15),
         child: Container(
@@ -181,6 +179,7 @@ class _CreateReceiptState extends State<CreateReceipt> {
                         _ingredientsList.length == 0 ||
                         _preparationMode.length == 0) {
                       var imageBytes = await convertImageToBase64(file.path);
+
                       Provider.of<Receipts>(context, listen: false)
                           .addReceipt(Receipt(
                         _controller[0].text,

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:full_kitchen/components/app_bar.dart';
+import 'package:full_kitchen/components/floating_action_button.dart';
+import 'package:full_kitchen/components/navigation.dart';
 import 'package:full_kitchen/models/categories.dart';
 import 'package:full_kitchen/screens/create_category.dart';
 import 'package:full_kitchen/screens/receipts_list.dart';
@@ -8,10 +11,7 @@ class CategoryKitchen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Categorias'),
-        backgroundColor: Color.fromRGBO(243, 2, 10, 1),
-      ),
+      appBar: appBar('Categorias'),
       body: Consumer<Categories>(builder: (context, categories, child) {
         return GridView.builder(
             itemCount: categories.categoriesList.length,
@@ -43,24 +43,17 @@ class CategoryKitchen extends StatelessWidget {
                       // scale: 9.5,
                     ),
                   ),
-                  onTap: () => Navigator.push(
+                  onTap: () => navigatorPush(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => ReceiptsList(categories.categoriesList[index]),
-                    ),
+                    () => ReceiptsList(categories.categoriesList[index]),
                   ),
                 ),
               );
             });
       }),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => CreateCategory(),
-          ),
-        ),
+      floatingActionButton: floatingActionButton(
+        context,
+        () => CreateCategory(),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:full_kitchen/components/app_bar.dart';
 import 'package:full_kitchen/models/receipt.dart';
 
 class DetailsReceitpt extends StatefulWidget {
@@ -17,10 +18,7 @@ class _DetailsReceitptState extends State<DetailsReceitpt> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.receipt.nameReceipt),
-        backgroundColor: Color.fromRGBO(243, 2, 10, 1),
-      ),
+      appBar: appBar(widget.receipt.nameReceipt),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(left: 15, right: 15, top: 15),
         child: Column(

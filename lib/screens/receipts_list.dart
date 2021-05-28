@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:full_kitchen/components/app_bar.dart';
+import 'package:full_kitchen/components/floating_action_button.dart';
+import 'package:full_kitchen/components/navigation.dart';
 import 'package:full_kitchen/models/category.dart';
 import 'package:full_kitchen/models/receipt.dart';
 import 'package:full_kitchen/models/receipts.dart';
@@ -14,10 +17,7 @@ class ReceiptsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Receitas'),
-        backgroundColor: Color.fromRGBO(243, 2, 10, 1),
-      ),
+      appBar: appBar('Receitas'),
       body: Consumer<Receipts>(builder: (context, receipts, child) {
         final List<Receipt> newList =
             findAllReceiptThisCategory(receipts.receiptsList);
@@ -29,23 +29,16 @@ class ReceiptsList extends StatelessWidget {
                   newList[index].nameReceipt,
                 ),
                 leading: Image.memory(newList[index].imageReceipt),
-                onTap: () => Navigator.push(
+                onTap: () => navigatorPush(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => DetailsReceitpt(newList[index]),
-                  ),
+                  () => DetailsReceitpt(newList[index]),
                 ),
               );
             });
       }),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => CreateReceipt(_category),
-          ),
-        ),
+      floatingActionButton: floatingActionButton(
+        context,
+        () => CreateReceipt(_category),
       ),
     );
   }

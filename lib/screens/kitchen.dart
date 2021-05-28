@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:full_kitchen/components/navigation.dart';
 import 'package:full_kitchen/screens/category_kitchen.dart';
 
 class Kitchen extends StatelessWidget {
@@ -51,13 +52,14 @@ class Kitchen extends StatelessWidget {
                   width: MediaQuery.of(context).size.height * 0.45,
                   height: MediaQuery.of(context).size.height * 0.07,
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: Color.fromRGBO(243, 2, 10, 1),),
+                    style: ElevatedButton.styleFrom(
+                      primary: Color.fromRGBO(243, 2, 10, 1),
+                    ),
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => CategoryKitchen(),
-                          ));
+                      navigatorPush(
+                        context,
+                        () => CategoryKitchen(),
+                      );
                     },
                     child: Text(
                       'Aproveite',

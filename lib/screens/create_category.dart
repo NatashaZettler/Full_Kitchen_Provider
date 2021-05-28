@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:full_kitchen/components/app_bar.dart';
 import 'package:full_kitchen/components/bottom_sheet.dart';
 import 'package:full_kitchen/components/snackbar.dart';
 import 'package:full_kitchen/models/categories.dart';
@@ -21,10 +22,7 @@ class _CreateCategoryState extends State<CreateCategory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Cadastre uma categoria'),
-        backgroundColor: Color.fromRGBO(243, 2, 10, 1),
-      ),
+      appBar: appBar('Cadastre uma categoria'),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(15),
         child: Column(
