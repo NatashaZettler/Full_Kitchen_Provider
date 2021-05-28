@@ -4,12 +4,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:full_kitchen/components/bottom_sheet.dart';
 import 'package:full_kitchen/components/snackbar.dart';
+import 'package:full_kitchen/models/category.dart';
 import 'package:full_kitchen/models/receipt.dart';
 import 'package:full_kitchen/models/receipts.dart';
 import 'package:full_kitchen/utils/images/convert_image.dart';
 import 'package:provider/provider.dart';
 
 class CreateReceipt extends StatefulWidget {
+  final Category _category;
+  CreateReceipt(this._category);
+
   @override
   _CreateReceiptState createState() => _CreateReceiptState();
 }
@@ -184,6 +188,7 @@ class _CreateReceiptState extends State<CreateReceipt> {
                         _ingredientsList,
                         _preparationMode,
                         _controller[3].text,
+                        widget._category,
                       ));
                       Navigator.pop(context);
                     } else {

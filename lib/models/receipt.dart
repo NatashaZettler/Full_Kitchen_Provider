@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:flutter/cupertino.dart';
+import 'package:full_kitchen/models/category.dart';
 
 class Receipt extends ChangeNotifier {
   String nameReceipt;
@@ -8,6 +9,7 @@ class Receipt extends ChangeNotifier {
   List<String> ingredients;
   List<String> preparationMode;
   String moreInformation;
+  Category category;
 
   Receipt(
     this.nameReceipt,
@@ -15,20 +17,6 @@ class Receipt extends ChangeNotifier {
     this.ingredients,
     this.preparationMode,
     this.moreInformation,
+    this.category,
   );
-
-  void addReceipt(
-    String name,
-    Uint8List image,
-    List<String> ingredients,
-    List<String> preparationMode,
-    String moreInformation,
-  ) {
-    this.nameReceipt = name;
-    this.imageReceipt = image;
-    this.ingredients = ingredients;
-    this.preparationMode = preparationMode;
-    this.moreInformation = moreInformation;
-    notifyListeners();
-  }
 }

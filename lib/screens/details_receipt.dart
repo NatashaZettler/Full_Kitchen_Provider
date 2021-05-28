@@ -114,15 +114,13 @@ class _DetailsReceitptState extends State<DetailsReceitpt> {
   }
 
   String getIngredients(List<String> ingredients) {
-    return ingredients.reduce((value, element) => '${value} \n ${element}');
+    return ingredients.reduce((value, element) => '$value \n $element');
   }
 
   String getPreparationMode(List<String> preparationMode) {
     String value = '';
-    int count = 0;
     for (int i = 0; i < preparationMode.length; i++) {
-      count++;
-      value = '${preparationMode[i]}\n${value}';
+      value = '${preparationMode[i]}\n$value';
     }
     return value;
   }

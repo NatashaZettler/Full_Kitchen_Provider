@@ -1,9 +1,5 @@
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:full_kitchen/models/categories.dart';
-import 'package:full_kitchen/models/category.dart';
-import 'package:full_kitchen/models/receipt.dart';
 import 'package:full_kitchen/models/receipts.dart';
 import 'package:full_kitchen/screens/kitchen.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +11,7 @@ void main() {
       ChangeNotifierProvider(create: (context) => Receipts()),
     ],
     child: MyKitchen(),
-  ));
+  ),);
 }
 
 class MyKitchen extends StatelessWidget {
