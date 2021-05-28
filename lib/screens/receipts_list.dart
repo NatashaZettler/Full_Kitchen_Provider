@@ -9,7 +9,8 @@ class ReceiptsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Receipts'),
+        title: Text('Receitas'),
+        backgroundColor: Color.fromRGBO(243, 2, 10, 1),
       ),
       body: Consumer<Receipts>(builder: (context, receipts, child) {
         return ListView.builder(
