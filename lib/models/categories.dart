@@ -6,7 +6,7 @@ class Categories extends ChangeNotifier {
 
   List<Category> get categoriesList => _categories;
 
-  void addCategory(Category newCategory){
+  void addCategory(Category newCategory) {
     this._categories.add(newCategory);
     notifyListeners();
   }

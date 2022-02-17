@@ -5,13 +5,15 @@ import 'package:full_kitchen/screens/kitchen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(create: (context) => Categories()),
-      ChangeNotifierProvider(create: (context) => Receipts()),
-    ],
-    child: MyKitchen(),
-  ),);
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => Categories()),
+        ChangeNotifierProvider(create: (context) => Receipts()),
+      ],
+      child: MyKitchen(),
+    ),
+  );
 }
 
 class MyKitchen extends StatelessWidget {

@@ -36,7 +36,7 @@ class _CreateReceiptState extends State<CreateReceipt> {
     return Scaffold(
       appBar: appBar('Cadastre uma categoria'),
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(left:15,right: 15),
+        padding: EdgeInsets.only(left: 15, right: 15),
         child: Container(
           height: 900,
           child: Column(
@@ -95,7 +95,8 @@ class _CreateReceiptState extends State<CreateReceipt> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.03),
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.03),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -134,7 +135,8 @@ class _CreateReceiptState extends State<CreateReceipt> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.03),
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.03),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(

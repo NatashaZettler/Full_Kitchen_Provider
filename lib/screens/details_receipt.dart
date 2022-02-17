@@ -94,15 +94,15 @@ class _DetailsReceitptState extends State<DetailsReceitpt> {
               ),
             ),
             Container(
-              height: 300,
+                height: 300,
                 padding: EdgeInsets.only(top: 50),
                 child: Card(
                   child: Align(
                       alignment: Alignment.topLeft,
                       child: Text(
                         text,
-                        style:
-                            TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 17),
                       )),
                 )),
           ],

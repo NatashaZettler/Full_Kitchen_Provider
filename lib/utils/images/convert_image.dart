@@ -11,5 +11,3 @@ Future<Uint8List> convertImageToBase64(String image) async {
 Image convertBase64ToImage(String base64) {
   return Image.memory(base64Decode(base64));
 }
-
-

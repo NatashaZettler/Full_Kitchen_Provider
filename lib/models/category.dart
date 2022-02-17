@@ -11,7 +11,7 @@ class Category extends ChangeNotifier {
     this.imageCategory,
   );
 
-  void addCategory(String name, Uint8List image){
+  void addCategory(String name, Uint8List image) {
     this.nameCategory = name;
     this.imageCategory = image;
     notifyListeners();

@@ -7,7 +7,6 @@ class ReturnImage {
   late File _image;
 
   Future<File> getImage(ImageSource item) async {
-
     final pickedFile = await picker.getImage(source: item);
     if (pickedFile != null) {
       _image = File(pickedFile.path);

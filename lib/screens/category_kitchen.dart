@@ -40,7 +40,7 @@ class CategoryKitchen extends StatelessWidget {
                   child: Card(
                     child: Image.memory(
                       categories.categoriesList[index].imageCategory,
-                      // scale: 9.5,
+                      // scale: 9document.5,
                     ),
                   ),
                   onTap: () => navigatorPush(
